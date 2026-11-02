@@ -185,10 +185,18 @@ p { margin: 0; }
 
 /* Confianza */
 .confianza { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.formas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.forma { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 22px; padding: 28px; }
-.forma-papel { border: 2px solid var(--oro); }
-.papel-imagen { display: block; width: 100%; max-width: 880px; height: auto; margin: 0 auto 40px; border-radius: 28px; box-shadow: 0 24px 60px #0B164033; }
+.papel { background: linear-gradient(180deg, #FFF6E0 0%, var(--fondo) 100%); }
+.papel-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
+.papel-imagen { display: block; width: 100%; height: auto; border-radius: var(--radio); box-shadow: 0 30px 70px #0B164040; }
+.papel-texto h2 { font-size: clamp(30px, 3.6vw, 42px); font-weight: 900; line-height: 1.1; }
+.papel-entrada { margin-top: 16px; color: var(--suave); font-size: 19px; }
+.papel-pasos { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 18px; }
+.papel-pasos li { display: flex; gap: 16px; align-items: flex-start; }
+.papel-pasos .emoji { flex: none; width: 52px; height: 52px; display: grid; place-items: center; font-size: 28px; background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 16px; }
+.papel-pasos h3 { font-size: 19px; font-weight: 900; }
+.papel-pasos p { color: var(--suave); font-size: 16px; margin-top: 4px; }
+.papel-nota { margin-top: 26px; padding: 18px 20px; background: var(--tarjeta); border: 1px solid var(--linea); border-left: 4px solid var(--oro); border-radius: 16px; color: var(--suave); font-size: 15px; }
+.papel-nota strong { color: var(--texto); }
 .forma .emoji { font-size: 44px; line-height: 1; display: block; margin-bottom: 14px; }
 .forma h3 { font-size: 21px; font-weight: 900; }
 .forma p { color: var(--suave); font-size: 16px; margin-top: 8px; }
@@ -266,7 +274,7 @@ p { margin: 0; }
   .paso-texto { text-align: center; }
   .paso ul { justify-content: center; text-align: left; }
   .confianza { grid-template-columns: 1fr 1fr; }
-  .formas { grid-template-columns: 1fr; }
+  .papel-grid { grid-template-columns: 1fr; gap: 40px; }
   .planes { grid-template-columns: 1fr; }
   .seccion { padding-block: 76px; }
 }
