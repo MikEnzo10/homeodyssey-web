@@ -188,6 +188,7 @@ p { margin: 0; }
 .formas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .forma { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 22px; padding: 28px; }
 .forma-papel { border: 2px solid var(--oro); }
+.papel-imagen { display: block; width: 100%; max-width: 880px; height: auto; margin: 0 auto 40px; border-radius: 28px; box-shadow: 0 24px 60px #0B164033; }
 .forma .emoji { font-size: 44px; line-height: 1; display: block; margin-bottom: 14px; }
 .forma h3 { font-size: 21px; font-weight: 900; }
 .forma p { color: var(--suave); font-size: 16px; margin-top: 8px; }
