@@ -185,6 +185,12 @@ p { margin: 0; }
 
 /* Confianza */
 .confianza { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.formas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.forma { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 22px; padding: 28px; }
+.forma-papel { border: 2px solid var(--oro); }
+.forma .emoji { font-size: 44px; line-height: 1; display: block; margin-bottom: 14px; }
+.forma h3 { font-size: 21px; font-weight: 900; }
+.forma p { color: var(--suave); font-size: 16px; margin-top: 8px; }
 .punto { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 22px; padding: 26px; }
 .punto img { width: 52px; height: 52px; margin-bottom: 14px; }
 .punto h3 { font-size: 20px; font-weight: 900; }
@@ -259,6 +265,7 @@ p { margin: 0; }
   .paso-texto { text-align: center; }
   .paso ul { justify-content: center; text-align: left; }
   .confianza { grid-template-columns: 1fr 1fr; }
+  .formas { grid-template-columns: 1fr; }
   .planes { grid-template-columns: 1fr; }
   .seccion { padding-block: 76px; }
 }
