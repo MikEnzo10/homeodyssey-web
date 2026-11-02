@@ -197,6 +197,14 @@ p { margin: 0; }
 .papel-pasos p { color: var(--suave); font-size: 16px; margin-top: 4px; }
 .papel-nota { margin-top: 26px; padding: 18px 20px; background: var(--tarjeta); border: 1px solid var(--linea); border-left: 4px solid var(--oro); border-radius: 16px; color: var(--suave); font-size: 15px; }
 .papel-nota strong { color: var(--texto); }
+.papel-como { margin-top: 64px; }
+.papel-como-titulo { text-align: center; font-size: 24px; font-weight: 900; margin-bottom: 28px; }
+.papel-pasos-app { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.papel-paso { text-align: center; }
+.papel-paso .movil { width: 210px; margin: 0 auto 18px; }
+.papel-paso h3 { font-size: 18px; font-weight: 900; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.papel-paso p { color: var(--suave); font-size: 15px; margin-top: 6px; max-width: 280px; margin-inline: auto; }
+.papel-num { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 15px; color: #0B1640; background: var(--oro); }
 .forma .emoji { font-size: 44px; line-height: 1; display: block; margin-bottom: 14px; }
 .forma h3 { font-size: 21px; font-weight: 900; }
 .forma p { color: var(--suave); font-size: 16px; margin-top: 8px; }
@@ -275,6 +283,10 @@ p { margin: 0; }
   .paso ul { justify-content: center; text-align: left; }
   .confianza { grid-template-columns: 1fr 1fr; }
   .papel-grid { grid-template-columns: 1fr; gap: 40px; }
+  .papel-pasos-app { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 8px; margin-inline: -16px; padding-inline: 16px; }
+  .papel-paso { flex: 0 0 72%; scroll-snap-align: center; }
+  .papel-paso .movil { width: 170px; }
+  .papel-como { margin-top: 48px; }
   .planes { grid-template-columns: 1fr; }
   .seccion { padding-block: 76px; }
 }
