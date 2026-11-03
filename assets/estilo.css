@@ -1,4 +1,7 @@
 /* HomeOdyssey · web. Mismos colores y letra que la app: noche, degradado del logo y oro. */
+/* Nada se sale por los lados: en el móvil, arrastrar de lado enseñaba un borde blanco. */
+html, body { overflow-x: clip; }
+
 :root {
   --noche: #0B1640;
   --noche-2: #162E7B;
@@ -198,6 +201,12 @@ p { margin: 0; }
 .papel-nota { margin-top: 26px; padding: 18px 20px; background: var(--tarjeta); border: 1px solid var(--linea); border-left: 4px solid var(--oro); border-radius: 16px; color: var(--suave); font-size: 15px; }
 .papel-nota strong { color: var(--texto); }
 .papel-como { margin-top: 64px; }
+.proximo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.proximo { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 22px; padding: 22px; }
+.proximo .emoji { font-size: 34px; line-height: 1; display: block; margin-bottom: 12px; }
+.proximo h3 { font-size: 18px; font-weight: 900; }
+.proximo p { color: var(--suave); font-size: 15px; margin-top: 6px; }
+.proximo-nota { text-align: center; color: var(--suave); font-size: 15px; margin-top: 22px; }
 .papel-como-titulo { text-align: center; font-size: 24px; font-weight: 900; margin-bottom: 28px; }
 .papel-pasos-app { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .papel-paso { text-align: center; }
@@ -283,6 +292,7 @@ p { margin: 0; }
   .paso ul { justify-content: center; text-align: left; }
   .confianza { grid-template-columns: 1fr 1fr; }
   .papel-grid { grid-template-columns: 1fr; gap: 40px; }
+  .proximo-grid { grid-template-columns: 1fr 1fr; }
   .papel-pasos-app { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 8px; margin-inline: -16px; padding-inline: 16px; }
   .papel-paso { flex: 0 0 72%; scroll-snap-align: center; }
   .papel-paso .movil { width: 170px; }
@@ -296,6 +306,7 @@ p { margin: 0; }
   .idioma { margin-left: auto; }
   .lista-misiones { grid-template-columns: 1fr; }
   .confianza { grid-template-columns: 1fr; }
+  .proximo-grid { grid-template-columns: 1fr; }
   .mirada { padding: 28px 24px 0; }
   .caja, .plan { padding: 24px; }
   .pie .derechos { margin-left: 0; }
