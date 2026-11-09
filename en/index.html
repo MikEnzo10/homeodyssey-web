@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>HomeOdyssey · Household chores, turned into a game</title>
-  <meta name="description" content="A family app where kids complete household missions, earn stars and swap them for rewards you choose. No photos, no ads. Free until December 1.">
+  <title>HomeOdyssey · Turn household chaos into an adventure</title>
+  <meta name="description" content="A family app for Android and iPhone: kids complete household missions, earn stars and swap them for rewards you choose. Ages 5 to 15. No photos, no ads. Free to download.">
   <link rel="canonical" href="https://homeodyssey.app/en/">
   <link rel="alternate" hreflang="es" href="https://homeodyssey.app/">
   <link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/">
@@ -12,11 +12,18 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="HomeOdyssey">
   <meta property="og:title" content="HomeOdyssey · Turn household chaos into an adventure">
-  <meta property="og:description" content="Weekly missions, stars and rewards for your kids. Free until December 1.">
+  <meta property="og:description" content="Weekly missions, stars and rewards for your kids. Now on Google Play and the App Store. Free to download.">
   <meta property="og:url" content="https://homeodyssey.app/en/">
   <meta property="og:image" content="https://homeodyssey.app/assets/img/og-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HomeOdyssey: turn household chaos into an adventure. A kid's home screen with their star piggy bank.">
   <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="es_ES">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HomeOdyssey · Turn household chaos into an adventure">
+  <meta name="twitter:description" content="Weekly missions, stars and rewards for your kids. Now on Google Play and the App Store. Free to download.">
+  <meta name="twitter:image" content="https://homeodyssey.app/assets/img/og-en.png">
   <meta name="theme-color" content="#0B1640">
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
@@ -24,23 +31,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap">
   <link rel="stylesheet" href="/assets/estilo.css">
+  <link rel="preload" as="image" href="/assets/img/en/p01-inicio.webp" fetchpriority="high">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"MobileApplication","name":"HomeOdyssey","operatingSystem":"Android","applicationCategory":"LifestyleApplication","inLanguage":["es","en","pt","it","fr","de"],"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://homeodyssey.app/en/"}
+  {"@context":"https://schema.org","@type":"MobileApplication","name":"HomeOdyssey","operatingSystem":["Android","iOS"],"applicationCategory":"LifestyleApplication","inLanguage":["es","en","pt","it","fr","de"],"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"url":"https://homeodyssey.app/en/","image":"https://homeodyssey.app/assets/img/og-en.png","author":{"@type":"Organization","name":"HomeOdyssey","url":"https://homeodyssey.app/"}}
   </script>
 </head>
 <body>
 
 <header class="cabecera">
   <div class="envoltura">
-    <a class="logo" href="/en/" aria-label="HomeOdyssey, home"><img src="/assets/img/icono-512.png" alt="" width="40" height="40">HomeOdyssey</a>
+    <a class="logo" href="/en/" aria-label="HomeOdyssey, home"><img src="/assets/img/icono-192.webp" alt="" width="40" height="40"><span>HomeOdyssey</span></a>
     <nav class="menu" aria-label="Sections">
       <a href="#how-it-works">How it works</a>
+      <a href="#paper">On paper</a>
       <a href="#examples">Examples</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a class="idioma" href="/" hreflang="es" lang="es">Español</a>
-    <a class="boton boton-oro" href="https://play.google.com/store/apps/details?id=com.niddum.app&amp;hl=en" style="padding:11px 18px;font-size:15px">Download</a>
+    <a class="boton boton-oro" data-tienda="auto" href="#download">Download</a>
   </div>
 </header>
 
@@ -48,60 +57,41 @@
   <section class="noche portada">
     <div class="envoltura">
       <div>
-        <p class="aviso-lanzamiento">⭐ Free until December 1</p>
+        <p class="aviso-lanzamiento" data-lanzamiento><span>⭐ Free until <span data-fecha="fin">December 1</span></span></p>
         <h1>Turn household chaos into <span class="oro">an adventure</span></h1>
         <p class="entrada">Every week, a family adventure: your kids complete household missions, earn stars and swap them for rewards you choose. No more nagging.</p>
-        <div class="botones">
-          <a class="boton boton-oro" href="https://play.google.com/store/apps/details?id=com.niddum.app&amp;hl=en">
+        <div class="tiendas">
+          <a class="boton-tienda" data-tienda="play" href="https://play.google.com/store/apps/details?id=com.niddum.app&amp;hl=en">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 5 3.5z"/></svg>
-            Get it on Google Play
+            <div><span>Free on</span><strong>Google Play</strong></div>
           </a>
-          <span class="boton boton-fantasma">iPhone <small>coming soon</small></span>
+          <a class="boton-tienda" data-tienda="appstore" href="https://www.google.com/search?q=HomeOdyssey+App+Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7zm3 13h4v2h-4v-2z"/></svg>
+            <div><span>Free on the</span><strong>App Store</strong></div>
+          </a>
         </div>
         <p class="letra-pequena">For kids aged 5 to 15 · No ads · No photos of your kids</p>
       </div>
       <div class="portada-moviles" aria-hidden="true">
-        <div class="movil"><img src="/assets/img/en/p01-inicio.webp" alt="" width="720" height="1600"></div>
+        <div class="movil"><img src="/assets/img/en/p01-inicio.webp" alt="" width="720" height="1600" fetchpriority="high"></div>
         <div class="movil"><img src="/assets/img/en/c03.webp" alt="" width="720" height="1600"></div>
       </div>
     </div>
   </section>
 
-  <section class="seccion papel" id="paper">
-    <div class="envoltura papel-grid">
-      <img class="papel-imagen" src="/assets/img/en/hoja-papel.webp" alt="Printed weekly sheet stuck on a fridge, with morning, afternoon and evening missions" loading="lazy" width="1200" height="900">
-      <div class="papel-texto">
-        <span class="etiqueta">On a phone or on paper</span>
-        <h2>Your kids don't need to use screens if you'd rather they didn't</h2>
-        <p class="papel-entrada">Every home has its own rules about screens, and HomeOdyssey fits yours. You plan the week in the app, and they can live it on the fridge door.</p>
-        <ol class="papel-pasos">
-          <li><span class="emoji" aria-hidden="true">🖨️</span><div><h3>Their sheet, ready to print</h3><p>One page per kid, with their morning, afternoon and evening missions, the stars each one is worth and the family prize.</p></div></li>
-          <li><span class="emoji" aria-hidden="true">✏️</span><div><h3>They tick it with a pen</h3><p>No passwords, no chargers: they do the mission and tick their box. It's their sheet, and they see it every time they open the fridge.</p></div></li>
-          <li><span class="emoji" aria-hidden="true">⭐</span><div><h3>You copy it into the app in a minute</h3><p>Tick what they've done, and their stars, streaks and badges count just as if they'd done it on a phone.</p></div></li>
-        </ol>
-        <p class="papel-nota"><strong>Rather use a phone or the family tablet?</strong> That works too: they open their profile, with a PIN if you like, and you switch back to grown-up mode with your fingerprint or Face ID. If they have their own phone, connect it once with a code. The sheet is included in the free plan.</p>
+  <!-- Intro video. Hidden until data-video holds the mp4 URL (web.js shows it and loads the video on tap).
+       When the new video is ready: upload it to /assets/video/presentacion-en.mp4, put that path in data-video
+       and replace the image below with a still frame (webp, 720×1280). -->
+  <section class="seccion video" id="video" hidden data-video="">
+    <div class="envoltura">
+      <div class="cabeza">
+        <span class="etiqueta">In one minute</span>
+        <h2>This is a week with HomeOdyssey</h2>
+      </div>
+      <div class="video-marco">
+        <button class="video-poster" type="button" aria-label="Watch the intro video, 55 seconds"><img src="/assets/img/en/p01-inicio.webp" alt="" loading="lazy" width="720" height="1600"></button>
       </div>
     </div>
-      <div class="envoltura papel-como">
-        <h3 class="papel-como-titulo">How it works</h3>
-        <ol class="papel-pasos-app">
-          <li class="papel-paso">
-            <div class="movil"><img src="/assets/img/en/hoja-paso-1.webp" alt="Missions tab with the “Weekly sheet” row highlighted" loading="lazy" width="720" height="1600"></div>
-            <h3><span class="papel-num">1</span>Open “Weekly sheet”</h3>
-            <p>In the Missions tab, right above the list.</p>
-          </li>
-          <li class="papel-paso">
-            <div class="movil"><img src="/assets/img/en/hoja-paso-2.webp" alt="Weekly sheet screen with the “Print everyone’s sheet” button highlighted" loading="lazy" width="720" height="1600"></div>
-            <h3><span class="papel-num">2</span>Print it</h3>
-            <p>Everyone's sheet at once, or one per kid. You can also save it as a PDF.</p>
-          </li>
-          <li class="papel-paso">
-            <div class="movil"><img src="/assets/img/en/hoja-paso-3.webp" alt="Copy the sheet screen with Lily’s boxes for the week" loading="lazy" width="720" height="1600"></div>
-            <h3><span class="papel-num">3</span>Copy the sheet</h3>
-            <p>At the end of the week, tick what they did on paper and their stars go to the piggy bank.</p>
-          </li>
-        </ol>
-      </div>
   </section>
 
   <section class="seccion" id="how-it-works">
@@ -168,6 +158,43 @@
     </div>
   </section>
 
+  <section class="seccion papel" id="paper">
+    <div class="envoltura papel-grid">
+      <img class="papel-imagen" src="/assets/img/en/hoja-papel.webp" alt="Printed weekly sheet stuck on a fridge, with morning, afternoon and evening missions" loading="lazy" width="1200" height="900">
+      <div class="papel-texto">
+        <span class="etiqueta">On a phone or on paper</span>
+        <h2>Your kids don't need to use screens if you'd rather they didn't</h2>
+        <p class="papel-entrada">Every home has its own rules about screens, and HomeOdyssey fits yours. You plan the week in the app, and they can live it on the fridge door.</p>
+        <ol class="papel-pasos">
+          <li><span class="emoji" aria-hidden="true">🖨️</span><div><h3>Their sheet, ready to print</h3><p>One page per kid, with their morning, afternoon and evening missions, the stars each one is worth and the family prize.</p></div></li>
+          <li><span class="emoji" aria-hidden="true">✏️</span><div><h3>They tick it with a pen</h3><p>No passwords, no chargers: they do the mission and tick their box. It's their sheet, and they see it every time they open the fridge.</p></div></li>
+          <li><span class="emoji" aria-hidden="true">⭐</span><div><h3>You copy it into the app in a minute</h3><p>Tick what they've done, and their stars, streaks and badges count just as if they'd done it on a phone.</p></div></li>
+        </ol>
+        <p class="papel-nota"><strong>Rather use a phone or the family tablet?</strong> That works too: they open their profile, with a PIN if you like, and you switch back to grown-up mode with your fingerprint or Face ID. If they have their own phone, connect it once with a code. The sheet is included in the free plan.</p>
+      </div>
+    </div>
+      <div class="envoltura papel-como">
+        <h3 class="papel-como-titulo">How it works</h3>
+        <ol class="papel-pasos-app">
+          <li class="papel-paso">
+            <div class="movil"><img src="/assets/img/en/hoja-paso-1.webp" alt="Missions tab with the “Weekly sheet” row highlighted" loading="lazy" width="720" height="1600"></div>
+            <h3><span class="papel-num">1</span>Open “Weekly sheet”</h3>
+            <p>In the Missions tab, right above the list.</p>
+          </li>
+          <li class="papel-paso">
+            <div class="movil"><img src="/assets/img/en/hoja-paso-2.webp" alt="Weekly sheet screen with the “Print everyone’s sheet” button highlighted" loading="lazy" width="720" height="1600"></div>
+            <h3><span class="papel-num">2</span>Print it</h3>
+            <p>Everyone's sheet at once, or one per kid. You can also save it as a PDF.</p>
+          </li>
+          <li class="papel-paso">
+            <div class="movil"><img src="/assets/img/en/hoja-paso-3.webp" alt="Copy the sheet screen with Lily’s boxes for the week" loading="lazy" width="720" height="1600"></div>
+            <h3><span class="papel-num">3</span>Copy the sheet</h3>
+            <p>At the end of the week, tick what they did on paper and their stars go to the piggy bank.</p>
+          </li>
+        </ol>
+      </div>
+  </section>
+
   <section class="seccion">
     <div class="envoltura">
       <div class="cabeza">
@@ -201,10 +228,10 @@
         <p>Some of the ideas that come with the app. Use them as they are, edit them or create your own.</p>
       </div>
       <div class="edades" role="tablist" aria-label="Age">
-        <button role="tab" id="t6" aria-controls="e6" aria-selected="true">Ages 6–7</button>
+        <button role="tab" id="t6" aria-controls="e6" aria-selected="true">Ages 5–7</button>
         <button role="tab" id="t8" aria-controls="e8" aria-selected="false">Ages 8–9</button>
         <button role="tab" id="t10" aria-controls="e10" aria-selected="false">Ages 10–11</button>
-        <button role="tab" id="t12" aria-controls="e12" aria-selected="false">Ages 12+</button>
+        <button role="tab" id="t12" aria-controls="e12" aria-selected="false">Ages 12–15</button>
       </div>
 
       <div class="panel-edad" role="tabpanel" id="e6" aria-labelledby="t6">
@@ -326,7 +353,7 @@
         <h2>Clear from the start</h2>
         <p>No small print: this is how HomeOdyssey's pricing works.</p>
       </div>
-      <p class="franja-lanzamiento"><span>Now:</span> free until December 1, with everything included. We'll remind you in the app before it ends.</p>
+      <p class="franja-lanzamiento" data-lanzamiento><span>Now:</span> free until <span data-fecha="fin">December 1</span>, with everything included. We'll remind you in the app before it ends.</p>
       <div class="planes">
         <div class="plan">
           <h3>Free</h3>
@@ -367,10 +394,10 @@
         <h2>Ideas we're preparing for the next versions</h2>
       </div>
       <div class="proximo-grid">
-        <div class="proximo"><span class="emoji" aria-hidden="true">🎮</span><h3>Family mini-games</h3><p>Quick kids-vs-grown-ups challenges to celebrate the week.</p></div>
-        <div class="proximo"><span class="emoji" aria-hidden="true">🐣</span><h3>A pet that grows</h3><p>Look after it with missions: the more they do, the more it grows.</p></div>
+        <div class="proximo destacado"><span class="emoji" aria-hidden="true">🎮</span><div><span class="proximo-chip">The idea we're working on most</span><h3>Family mini-games: challenge accepted?</h3><p>Once per adventure, your kid will be able to challenge you to a mini-game on the same phone, taking turns. If they win, they earn extra stars for their piggy bank. Quick rounds and family records to keep the rivalry going until next week.</p><ul class="proximo-puntos"><li>🎯 One challenge per adventure</li><li>⭐ Extra stars if they win</li><li>🏆 Family records</li></ul></div></div>
         <div class="proximo"><span class="emoji" aria-hidden="true">🌙</span><h3>Dark mode</h3><p>To check missions at night without the glare.</p></div>
         <div class="proximo"><span class="emoji" aria-hidden="true">💡</span><h3>More ideas by age</h3><p>New mission and reward packs for every stage.</p></div>
+        <div class="proximo"><span class="emoji" aria-hidden="true">✨</span><h3>…and much more</h3><p>Our notebook is full of ideas. And you pick the best ones, through the Ideas box.</p></div>
       </div>
       <p class="proximo-nota">No dates yet: when something is ready, we'll tell you in the app. Missing something? Write to us from Profile › Ideas box.</p>
     </div>
@@ -400,12 +427,12 @@
           <p>Yes. Invite other adults to your home and everyone can see the missions, approve them and give rewards. Each adult signs in with their own account.</p>
         </details>
         <details>
-          <summary>What happens on December 1?</summary>
-          <p>That's when the free launch ends. If you already use HomeOdyssey, you keep everything for 14 more days, until December 15, and we'll remind you in the app first. Then you choose: stay on the free plan forever or move to Plus. We never charge you unless you choose to.</p>
+          <summary>What happens on <span data-fecha="fin">December 1</span>?</summary>
+          <p>That's when the free launch ends. If you already use HomeOdyssey, you keep everything for 14 more days, until <span data-fecha="fin+14">December 15</span>, and we'll remind you in the app first. Then you choose: stay on the free plan forever or move to Plus. We never charge you unless you choose to.</p>
         </details>
         <details>
-          <summary>Is it on iPhone?</summary>
-          <p>It's out on Android now and the iPhone version is coming very soon. Follow us on Instagram or TikTok to hear about it on day one.</p>
+          <summary>Which phones does it work on?</summary>
+          <p>Android, from Google Play, and iPhone and iPad, from the App Store. Each adult signs in with their own account from their own phone, whatever the brand, and everyone sees the same home.</p>
         </details>
         <details>
           <summary>Which languages is it in?</summary>
@@ -419,24 +446,29 @@
     </div>
   </section>
 
-  <section class="noche final">
+  <section class="noche final" id="download">
     <div class="envoltura">
-      <img class="icono-final" src="/assets/img/icono-512.png" alt="" width="96" height="96">
+      <img class="icono-final" src="/assets/img/icono-192.webp" alt="" width="96" height="96" loading="lazy">
       <h2>Every week, <span class="oro">a family adventure</span></h2>
       <p>Set it up tonight and tomorrow your kids start their first mission.</p>
-      <div class="botones">
-        <a class="boton boton-oro" href="https://play.google.com/store/apps/details?id=com.niddum.app&amp;hl=en">
+      <div class="tiendas">
+        <a class="boton-tienda" data-tienda="play" href="https://play.google.com/store/apps/details?id=com.niddum.app&amp;hl=en">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 5 3.5z"/></svg>
-          Get it free on Google Play
+          <div><span>Free on</span><strong>Google Play</strong></div>
+        </a>
+        <a class="boton-tienda" data-tienda="appstore" href="https://www.google.com/search?q=HomeOdyssey+App+Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v16h10V4H7zm3 13h4v2h-4v-2z"/></svg>
+          <div><span>Free on the</span><strong>App Store</strong></div>
         </a>
       </div>
+      <p class="letra-pequena"><span data-lanzamiento>Free until <span data-fecha="fin">December 1</span> with everything included · </span>No ads · No photos of your kids</p>
     </div>
   </section>
 </main>
 
 <footer class="pie">
   <div class="envoltura">
-    <a class="logo" href="/en/"><img src="/assets/img/icono-512.png" alt="" width="40" height="40">HomeOdyssey</a>
+    <a class="logo" href="/en/"><img src="/assets/img/icono-192.webp" alt="" width="40" height="40" loading="lazy"><span>HomeOdyssey</span></a>
     <nav aria-label="Links">
       <a href="/en/support.html">Help</a>
       <a href="/privacidad-en.html">Privacy</a>
