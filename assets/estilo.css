@@ -232,6 +232,13 @@ p { margin: 0; }
 .proximo .emoji { font-size: 34px; line-height: 1; display: block; margin-bottom: 12px; }
 .proximo h3 { font-size: 18px; font-weight: 900; }
 .proximo p { color: var(--suave); font-size: 15px; margin-top: 6px; }
+.proximo.destacado { grid-column: 1 / -1; display: flex; gap: 22px; align-items: center; padding: 28px 30px;
+  border-color: rgba(255,200,61,0.55); background: linear-gradient(135deg, rgba(139,92,246,0.16), rgba(236,72,153,0.10) 60%, rgba(255,200,61,0.10)), var(--tarjeta); }
+.proximo.destacado .emoji { font-size: 58px; margin: 0; }
+.proximo.destacado h3 { font-size: 22px; }
+.proximo.destacado p { font-size: 16px; max-width: 760px; }
+.proximo-chip { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+  color: #B7791F; background: rgba(255,200,61,0.18); border-radius: 999px; padding: 4px 12px; margin-bottom: 8px; }
 .proximo-nota { text-align: center; color: var(--suave); font-size: 15px; margin-top: 22px; }
 .papel-como-titulo { text-align: center; font-size: 24px; font-weight: 900; margin-bottom: 28px; }
 .papel-pasos-app { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -328,6 +335,8 @@ p { margin: 0; }
   .seccion { padding-block: 76px; }
 }
 @media (max-width: 560px) {
+  .proximo.destacado { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px; }
+  .proximo.destacado .emoji { font-size: 44px; }
   body { font-size: 17px; }
   /* En el móvil, la cabecera guarda el botón de descarga y suelta el nombre: el logo basta. */
   .cabecera .envoltura { gap: 12px; }
