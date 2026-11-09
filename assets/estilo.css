@@ -227,7 +227,7 @@ p { margin: 0; }
 .papel-nota { margin-top: 26px; padding: 18px 20px; background: var(--tarjeta); border: 1px solid var(--linea); border-left: 4px solid var(--oro); border-radius: 16px; color: var(--suave); font-size: 15px; }
 .papel-nota strong { color: var(--texto); }
 .papel-como { margin-top: 64px; }
-.proximo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.proximo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .proximo { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 22px; padding: 22px; }
 .proximo .emoji { font-size: 34px; line-height: 1; display: block; margin-bottom: 12px; }
 .proximo h3 { font-size: 18px; font-weight: 900; }
@@ -237,6 +237,9 @@ p { margin: 0; }
 .proximo.destacado .emoji { font-size: 58px; margin: 0; }
 .proximo.destacado h3 { font-size: 22px; }
 .proximo.destacado p { font-size: 16px; max-width: 760px; }
+.proximo-puntos { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding: 0; }
+.proximo-puntos li { font-size: 14px; font-weight: 800; color: var(--tinta); background: rgba(255,255,255,0.7);
+  border: 1px solid var(--linea); border-radius: 999px; padding: 6px 14px; }
 .proximo-chip { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
   color: #B7791F; background: rgba(255,200,61,0.18); border-radius: 999px; padding: 4px 12px; margin-bottom: 8px; }
 .proximo-nota { text-align: center; color: var(--suave); font-size: 15px; margin-top: 22px; }
@@ -327,6 +330,7 @@ p { margin: 0; }
   .confianza { grid-template-columns: 1fr 1fr; }
   .papel-grid { grid-template-columns: 1fr; gap: 40px; }
   .proximo-grid { grid-template-columns: 1fr 1fr; }
+  .proximo-grid > .proximo:last-child { grid-column: 1 / -1; }
   .papel-pasos-app { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 8px; margin-inline: -16px; padding-inline: 16px; }
   .papel-paso { flex: 0 0 72%; scroll-snap-align: center; }
   .papel-paso .movil { width: 170px; }
