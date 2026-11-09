@@ -1,3 +1,40 @@
+// HomeOdyssey · web. Todo lo que hay que rellenar está en este bloque, en un solo sitio.
+// Las páginas no llevan ningún otro ID ni enlace de tienda que haya que tocar.
+const AJUSTES = {
+  // ID numérico de la app en App Store Connect › Información de la app › «ID de Apple».
+  // Mientras esté vacío, los botones de App Store llevan a una búsqueda (nunca a un enlace roto).
+  APP_STORE_ID: '', // [PENDIENTE: ID de App Store] p. ej. '6741234567'
+  // Umami Cloud › Ajustes del sitio › «Website ID». Mientras esté vacío no se carga nada.
+  UMAMI_ID: '', // [PENDIENTE: ID de Umami] p. ej. 'a1b2c3d4-…'
+  // «Provider token» del generador de enlaces de campaña de App Store Connect (Analíticas › Adquisición).
+  PT_APPLE: '', // [PENDIENTE: pt de Apple] p. ej. '123456789'
+  PLAY_ID: 'com.niddum.app',
+};
+
+const idioma = (document.documentElement.lang || 'es').slice(0, 2);
+
+// Enlaces a las tiendas. Play lleva el idioma; App Store, la tienda española en la web en
+// español y la del visitante (sin país) en inglés.
+const enlacePlay = () => `https://play.google.com/store/apps/details?id=${AJUSTES.PLAY_ID}&hl=${idioma}`;
+const enlaceAppStore = () => {
+  if (AJUSTES.APP_STORE_ID) {
+    const pais = idioma === 'es' ? 'es/' : '';
+    return `https://apps.apple.com/${pais}app/homeodyssey/id${AJUSTES.APP_STORE_ID}`;
+  }
+  // Sin ID todavía: una búsqueda que siempre funciona y que enseñará la ficha en cuanto exista.
+  return 'https://www.google.com/search?q=HomeOdyssey+App+Store';
+};
+const esIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+// Analítica (Umami Cloud, sin cookies). Solo se carga si hay ID.
+if (AJUSTES.UMAMI_ID) {
+  const s = document.createElement('script');
+  s.defer = true;
+  s.src = 'https://cloud.umami.is/script.js';
+  s.dataset.websiteId = AJUSTES.UMAMI_ID;
+  document.head.appendChild(s);
+}
+
 // Pestañas de edades en "Ejemplos".
 document.querySelectorAll('.edades').forEach((lista) => {
   const pestanas = [...lista.querySelectorAll('[role="tab"]')];
@@ -22,14 +59,30 @@ document.querySelectorAll('.edades').forEach((lista) => {
   });
 });
 
+// Vídeo de presentación: solo aparece si la sección tiene data-video, y el vídeo se carga al pulsar.
+document.querySelectorAll('[data-video]').forEach((sec) => {
+  const src = sec.dataset.video;
+  if (!src) return;
+  sec.hidden = false;
+  const boton = sec.querySelector('.video-poster');
+  boton.addEventListener('click', () => {
+    const v = document.createElement('video');
+    v.src = src;
+    v.controls = true;
+    v.autoplay = true;
+    v.playsInline = true;
+    v.setAttribute('aria-label', boton.getAttribute('aria-label') || '');
+    boton.replaceWith(v);
+    if (window.umami) window.umami.track('video');
+  });
+});
+
 // Medición (homeodyssey-marketing/metricas.md).
 // 1) Si se llega con ?utm_..., se recuerda durante la visita.
 // 2) Los botones de Google Play llevan esos UTM en "referrer" (Play Console › Adquisición).
-// 3) Los botones de App Store llevan "ct" (App Store Connect › Analíticas › Campañas).
-//    PT_APPLE: el "provider token" del generador de enlaces de campaña de App Store Connect.
+// 3) Los botones de App Store llevan "ct" (App Store Connect › Analíticas › Campañas) y "pt".
 // 4) Cada clic en un botón de tienda se cuenta en la analítica (Umami), si está cargada.
 (() => {
-  const PT_APPLE = ''; // [PENDIENTE] p. ej. '123456789'
   const CLAVES = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
   const leer = () => {
     const q = new URLSearchParams(location.search);
@@ -46,16 +99,19 @@ document.querySelectorAll('.edades').forEach((lista) => {
     utm.utm_source = 'web';
     utm.utm_medium = document.referrer ? 'referral' : 'directo';
   }
-  const referrer = encodeURIComponent(CLAVES.filter((k) => utm[k]).map((k) => `${k}=${utm[k]}`).join('&'));
+  const referrer = CLAVES.filter((k) => utm[k]).map((k) => `${k}=${utm[k]}`).join('&');
   // ct de Apple: máximo 40 caracteres.
   const ct = [utm.utm_source, utm.utm_campaign, utm.utm_content].filter(Boolean).join('-').slice(0, 40);
 
-  document.querySelectorAll('a[href*="play.google.com/store/apps"], a[href*="apps.apple.com"]').forEach((a) => {
-    const url = new URL(a.href);
-    const play = url.hostname === 'play.google.com';
-    if (play) url.searchParams.set('referrer', decodeURIComponent(referrer));
-    else {
-      if (PT_APPLE) url.searchParams.set('pt', PT_APPLE);
+  // data-tienda="play" | "appstore" | "auto" (la del móvil del visitante; Play si no es iOS).
+  document.querySelectorAll('a[data-tienda]').forEach((a) => {
+    let tienda = a.dataset.tienda;
+    if (tienda === 'auto') tienda = esIOS ? 'appstore' : 'play';
+    const play = tienda === 'play';
+    const url = new URL(play ? enlacePlay() : enlaceAppStore());
+    if (play) url.searchParams.set('referrer', referrer);
+    else if (url.hostname === 'apps.apple.com') {
+      if (AJUSTES.PT_APPLE) url.searchParams.set('pt', AJUSTES.PT_APPLE);
       url.searchParams.set('ct', ct);
       url.searchParams.set('mt', '8');
     }

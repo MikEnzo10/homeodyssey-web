@@ -10,6 +10,13 @@ Web de HomeOdyssey: HTML y CSS estáticos, sin compilar nada.
 | Borrar la cuenta (6 idiomas) | `borrar-cuenta.html` | `borrar-cuenta-en.html` … |
 
 - Estilo común en `assets/estilo.css` (mismos colores y letra Nunito que la app).
+- `assets/web.js`: pestañas de edades, vídeo, enlaces a las tiendas y medición. **Todo lo que hay que
+  rellenar está en el bloque `AJUSTES` al principio**: `APP_STORE_ID` (ID de Apple de la app; mientras
+  esté vacío el botón de App Store lleva a una búsqueda), `UMAMI_ID` (analítica; sin ID no carga nada) y
+  `PT_APPLE` (atribución de campañas de Apple). Los botones de tienda en el HTML llevan `data-tienda`
+  (`play`, `appstore` o `auto`) y el JS pone el enlace final con los UTM.
+- Vídeo de presentación: la sección `#video` de las portadas está oculta hasta que `data-video` tenga
+  la URL del mp4; se carga solo al pulsar el póster.
 - Las páginas legales son copia de `backend/src/main/resources/static/` del repositorio
   de la app, que siguen publicadas en Railway. Si cambia la política, cambiarla en los dos sitios.
 - Las capturas (`assets/img/es`, `assets/img/en`) salen de la familia de ejemplo de las imágenes
