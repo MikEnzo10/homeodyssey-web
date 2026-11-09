@@ -9,6 +9,9 @@ const AJUSTES = {
   // «Provider token» del generador de enlaces de campaña de App Store Connect (Analíticas › Adquisición).
   PT_APPLE: '', // [PENDIENTE: pt de Apple] p. ej. '123456789'
   PLAY_ID: 'com.niddum.app',
+  // Primer día de pago: el mismo valor que PLUS_FIN_LANZAMIENTO en Railway (AAAA-MM-DD).
+  // Las fechas de la página salen de aquí; ese día desaparecen solos los avisos de «gratis hasta…».
+  FIN_LANZAMIENTO: '2026-12-01',
 };
 
 const idioma = (document.documentElement.lang || 'es').slice(0, 2);
@@ -24,6 +27,21 @@ const enlaceAppStore = () => {
   // Sin ID todavía: una búsqueda que siempre funciona y que enseñará la ficha en cuanto exista.
   return 'https://www.google.com/search?q=HomeOdyssey+App+Store';
 };
+// Fechas del lanzamiento. El HTML lleva la fecha escrita (para buscadores y vistas previas sin JS);
+// aquí se reescribe con la de AJUSTES. «fin+14» = los 14 días extra de quien ya la usaba.
+(() => {
+  const [a, m, d] = AJUSTES.FIN_LANZAMIENTO.split('-').map(Number);
+  const fin = new Date(a, m - 1, d);
+  const formato = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long' });
+  const enIngles = (f) => f.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+  document.querySelectorAll('[data-fecha]').forEach((el) => {
+    const extra = Number((el.dataset.fecha.match(/\+(\d+)/) || [0, 0])[1]);
+    const f = new Date(fin); f.setDate(f.getDate() + extra);
+    el.textContent = idioma === 'es' ? formato.format(f) : enIngles(f);
+  });
+  if (new Date() >= fin) document.querySelectorAll('[data-lanzamiento]').forEach((el) => { el.style.display = 'none'; });
+})();
+
 const esIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
 // Analítica (Umami Cloud, sin cookies). Solo se carga si hay ID.
