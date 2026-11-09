@@ -5,7 +5,7 @@ const AJUSTES = {
   // Mientras esté vacío, los botones de App Store llevan a una búsqueda (nunca a un enlace roto).
   APP_STORE_ID: '', // [PENDIENTE: ID de App Store] p. ej. '6741234567'
   // Umami Cloud › Ajustes del sitio › «Website ID». Mientras esté vacío no se carga nada.
-  UMAMI_ID: '', // [PENDIENTE: ID de Umami] p. ej. 'a1b2c3d4-…'
+  UMAMI_ID: 'd0e0dde4-d112-436a-a368-f8a92d120c18',
   // «Provider token» del generador de enlaces de campaña de App Store Connect (Analíticas › Adquisición).
   PT_APPLE: '', // [PENDIENTE: pt de Apple] p. ej. '123456789'
   PLAY_ID: 'com.niddum.app',
