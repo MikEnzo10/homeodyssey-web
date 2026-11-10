@@ -138,4 +138,11 @@ document.querySelectorAll('[data-video]').forEach((sec) => {
       if (window.umami) window.umami.track('descarga', { tienda: play ? 'play' : 'appstore', origen: utm.utm_source, pieza: utm.utm_content || '' });
     });
   });
+
+  // 5) Descargas de los imprimibles (PDF): evento «imprimible» con la hoja y el origen (/imprimibles/…).
+  document.querySelectorAll('a[data-descarga]').forEach((a) => {
+    a.addEventListener('click', () => {
+      if (window.umami) window.umami.track('imprimible', { hoja: a.dataset.descarga, origen: utm.utm_source, pieza: utm.utm_content || '' });
+    });
+  });
 })();
