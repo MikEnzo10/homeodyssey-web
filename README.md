@@ -8,6 +8,11 @@ Web de HomeOdyssey: HTML y CSS estáticos, sin compilar nada.
 | Ayuda (URL de soporte para Google Play y App Store) | `soporte.html` | `en/support.html` |
 | Privacidad (6 idiomas) | `privacidad.html` | `privacidad-en.html` … |
 | Borrar la cuenta (6 idiomas) | `borrar-cuenta.html` | `borrar-cuenta-en.html` … |
+| Imprimibles (PDF gratis, sin email): tareas por edad y recompensas sin dinero | `imprimibles/<nombre>/index.html` | — |
+
+- Los imprimibles (PDF, vistas previas `vista-1.webp`/`vista-2.webp` y `og.png`) los genera
+  `homeodyssey-marketing/contenido/2026-11-16-imagenes/generar.py` (`py generar.py web` los copia aquí).
+  La descarga se mide en Umami con el evento `imprimible`.
 
 - Estilo común en `assets/estilo.css` (mismos colores y letra Nunito que la app).
 - `assets/web.js`: pestañas de edades, vídeo, enlaces a las tiendas y medición. **Todo lo que hay que

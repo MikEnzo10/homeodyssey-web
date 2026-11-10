@@ -314,6 +314,34 @@ p { margin: 0; }
 .contacto { margin-top: 28px; background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 22px; padding: 26px; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; }
 .contacto strong { font-size: 22px; user-select: all; }
 
+/* ---------- Imprimibles (/imprimibles/…): portada con las dos hojas, qué incluye, texto y enlace a la app ---------- */
+.portada-imp .envoltura { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; padding-block: 64px 72px; }
+.portada-imp h1 { font-size: clamp(34px, 4.4vw, 54px); font-weight: 900; }
+.portada-imp .entrada { font-size: 20px; color: var(--lila-claro); font-weight: 700; margin: 20px 0 28px; max-width: 32em; }
+.portada-imp .letra-pequena { margin-top: 16px; font-size: 15px; color: #AAB4E8; font-weight: 600; }
+.hojas-vista { position: relative; height: 540px; }
+.hojas-vista img { position: absolute; width: min(60%, 320px); height: auto; border-radius: 10px; background: #fff; box-shadow: 0 30px 70px rgba(3, 6, 25, .6); }
+.hojas-vista img:first-child { left: 2%; top: 0; transform: rotate(-5deg); z-index: 1; }
+.hojas-vista img:last-child { right: 2%; top: 56px; transform: rotate(4deg); z-index: 2; }
+.contenido-imp { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.hoja-caja { border-radius: var(--radio); padding: 26px; border: 1px solid var(--linea); background: var(--tarjeta); display: grid; grid-template-columns: 150px 1fr; gap: 24px; align-items: start; }
+.hoja-caja img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--linea); box-shadow: 0 12px 30px rgba(11, 22, 64, .16); }
+.hoja-caja h3 { font-size: 21px; font-weight: 900; }
+.hoja-caja p { color: var(--suave); margin-top: 8px; font-size: 16px; }
+.hoja-caja ul { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 6px; font-weight: 700; font-size: 15px; }
+.texto-imp { max-width: 760px; }
+.texto-imp h2 { font-size: clamp(28px, 3.4vw, 38px); font-weight: 900; }
+.texto-imp h3 { font-size: 22px; font-weight: 900; margin-top: 36px; }
+.texto-imp p { margin-top: 12px; color: #3B3F66; }
+.texto-imp ul, .texto-imp ol { padding-left: 22px; margin: 12px 0 0; display: grid; gap: 6px; color: #3B3F66; }
+.texto-imp .nota { margin-top: 24px; padding: 18px 20px; background: var(--fondo); border: 1px solid var(--linea); border-left: 4px solid var(--oro); border-radius: 16px; color: var(--suave); font-size: 15px; }
+.otro-imp { margin-top: 48px; display: flex; gap: 22px; align-items: center; background: var(--fondo); border: 1px solid var(--linea); border-radius: var(--radio); padding: 22px 26px; text-decoration: none; color: var(--tinta); transition: transform .15s ease; }
+.otro-imp:hover { transform: translateY(-2px); }
+.otro-imp img { width: 90px; height: auto; flex: none; border-radius: 6px; box-shadow: 0 8px 20px rgba(11, 22, 64, .18); }
+.otro-imp .etiqueta { margin-bottom: 4px; }
+.otro-imp h3 { font-size: 20px; font-weight: 900; }
+.otro-imp p { color: var(--suave); font-size: 15px; margin-top: 4px; }
+
 /* ---------- Pantallas estrechas ---------- */
 @media (max-width: 920px) {
   .menu { display: none; }
@@ -337,6 +365,11 @@ p { margin: 0; }
   .papel-como { margin-top: 48px; }
   .planes { grid-template-columns: 1fr; }
   .seccion { padding-block: 76px; }
+  .portada-imp .envoltura { grid-template-columns: 1fr; text-align: center; padding-top: 44px; gap: 36px; }
+  .portada-imp .entrada { margin-inline: auto; font-size: 18px; }
+  .portada-imp .botones { justify-content: center; }
+  .hojas-vista { height: 420px; width: min(100%, 520px); margin: 0 auto; }
+  .contenido-imp { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .proximo.destacado { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px; }
@@ -373,6 +406,14 @@ p { margin: 0; }
   .mirada { padding: 28px 24px 0; }
   .caja, .plan { padding: 24px; }
   .pie .derechos { margin-left: 0; }
+  .portada-imp h1 { font-size: 32px; }
+  .portada-imp .boton { flex: 1 1 100%; justify-content: center; }
+  .hojas-vista { height: 330px; }
+  .hojas-vista img { width: 58%; }
+  .hojas-vista img:last-child { top: 36px; }
+  .hoja-caja { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+  .hoja-caja img { max-width: 160px; }
+  .otro-imp { flex-direction: column; align-items: flex-start; padding: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
