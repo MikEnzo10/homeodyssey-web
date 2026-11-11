@@ -11,7 +11,7 @@ const AJUSTES = {
   PLAY_ID: 'com.niddum.app',
   // Primer día de pago: el mismo valor que PLUS_FIN_LANZAMIENTO en Railway (AAAA-MM-DD).
   // Las fechas de la página salen de aquí; ese día desaparecen solos los avisos de «gratis hasta…».
-  FIN_LANZAMIENTO: '2026-12-01',
+  FIN_LANZAMIENTO: '2027-01-07',
 };
 
 const idioma = (document.documentElement.lang || 'es').slice(0, 2);
