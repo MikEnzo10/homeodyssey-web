@@ -66,7 +66,7 @@ p { margin: 0; }
 .logo img { width: 40px; height: 40px; border-radius: 11px; }
 .cabecera .boton { padding: 11px 18px; font-size: 15px; }
 .menu { display: flex; gap: 22px; margin-left: auto; }
-.menu a { color: var(--lila-claro); text-decoration: none; font-weight: 700; font-size: 16px; }
+.menu a { white-space: nowrap; color: var(--lila-claro); text-decoration: none; font-weight: 700; font-size: 16px; }
 .menu a:hover { color: #fff; }
 .idioma { color: #fff; text-decoration: none; font-weight: 800; font-size: 14px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 5px 12px; }
 .idioma:hover { background: rgba(255,255,255,.1); }
@@ -418,4 +418,56 @@ p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .boton { transition: none; }
+}
+
+/* ===== Novedades 1.1: Desafíos de la semana, héroes y Abuelos en la aventura ===== */
+.chip-nuevo { display: inline-block; background: var(--oro-degradado); color: #3A2200; font-weight: 900; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; margin-right: 8px; vertical-align: 2px; }
+.desafios .envoltura { position: relative; }
+.materias { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.materia { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 22px; padding: 26px; }
+.materia .emoji { font-size: 40px; line-height: 1; display: block; margin-bottom: 12px; }
+.materia h3 { font-size: 22px; font-weight: 900; }
+.materia p { color: var(--lila-claro); font-size: 16px; margin-top: 8px; }
+.desafio-puntos { list-style: none; padding: 0; margin: 28px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 920px; }
+.desafio-puntos li { font-size: 15px; font-weight: 800; color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: 8px 14px; }
+.heroes-bloque { margin-top: 80px; text-align: center; }
+.heroes-bloque h3 { font-size: clamp(26px, 3vw, 34px); font-weight: 900; }
+.heroes-bloque > p { color: var(--lila-claro); font-size: 18px; max-width: 680px; margin: 14px auto 0; }
+.heroes { list-style: none; padding: 0; margin: 36px 0 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.heroe { background: #010D48; border: 1px solid rgba(255,201,77,.28); border-radius: 22px; overflow: hidden; padding-bottom: 12px; }
+.heroe img { width: 100%; height: auto; aspect-ratio: 320 / 417; object-fit: cover; }
+.heroe span { display: block; font-weight: 900; font-size: 17px; margin-top: 4px; }
+.rangos { list-style: none; padding: 0; margin: 40px auto 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; max-width: 900px; position: relative; }
+.rangos li { position: relative; }
+.rangos img { width: 100%; height: auto; aspect-ratio: 200 / 260; object-fit: cover; border-radius: 16px; background: #010D48; }
+.rangos small { display: block; margin-top: 8px; font-weight: 800; font-size: 14px; color: var(--oro-claro); }
+.rangos li + li::before { content: "›"; position: absolute; left: -9px; top: 38%; color: var(--oro); font-weight: 900; font-size: 22px; }
+.nota-ilustracion { margin-top: 22px; font-size: 14px; color: #AAB4E8; }
+.incluido-plus { display: inline-block; margin-top: 26px; font-weight: 900; color: var(--oro-claro); border: 1px solid rgba(255,201,77,.45); border-radius: 999px; padding: 8px 16px; font-size: 15px; }
+.abuelos { background: linear-gradient(180deg, var(--fondo) 0%, #FFF6E0 100%); }
+.abuelos-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
+.abuelos-texto h2 { font-size: clamp(30px, 3.6vw, 42px); font-weight: 900; }
+.abuelos-entrada { margin-top: 16px; color: var(--suave); font-size: 19px; }
+.abuelos .incluido-plus { color: #8A5A00; border-color: #F3DFA6; background: #FFF6DE; }
+.abuelo-pantalla { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 34px; padding: 26px 22px; box-shadow: 0 30px 60px rgba(23, 26, 58, .14); max-width: 380px; justify-self: center; width: 100%; }
+.abuelo-hola { font-size: 22px; font-weight: 900; }
+.abuelo-peques { display: flex; gap: 8px; margin: 16px 0 18px; }
+.abuelo-peques span { font-weight: 800; font-size: 15px; padding: 8px 16px; border-radius: 999px; border: 2px solid var(--linea); }
+.abuelo-peques span:first-child { background: var(--noche-2); border-color: var(--noche-2); color: #fff; }
+.abuelo-toca { font-weight: 800; color: var(--suave); font-size: 15px; margin-bottom: 10px; }
+.abuelo-tarea { border: 1px solid var(--linea); border-radius: 18px; padding: 14px; margin-top: 10px; }
+.abuelo-tarea p { font-weight: 800; font-size: 18px; }
+.abuelo-boton { display: block; margin-top: 10px; text-align: center; font-weight: 900; font-size: 18px; color: #3A2200; background: var(--oro-degradado); border-radius: 14px; padding: 12px; }
+.abuelo-tarea.hecha { background: #EAF8EE; border-color: #BFE6CB; }
+.abuelo-tarea.hecha small { display: block; margin-top: 6px; color: #2E7D4A; font-weight: 800; font-size: 14px; }
+@media (max-width: 920px) {
+  .materias { grid-template-columns: 1fr; }
+  .heroes { grid-template-columns: repeat(3, 1fr); }
+  .abuelos-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 560px) {
+  .rangos { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .rangos li + li::before { display: none; }
+  .heroes { gap: 10px; }
+  .heroe span { font-size: 15px; }
 }
