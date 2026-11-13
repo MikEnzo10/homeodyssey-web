@@ -12,8 +12,30 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/"/>
   </url>
-  <url><loc>https://homeodyssey.app/imprimibles/tareas-por-edad/</loc></url>
-  <url><loc>https://homeodyssey.app/imprimibles/recompensas-sin-dinero/</loc></url>
+  <url>
+    <loc>https://homeodyssey.app/imprimibles/tareas-por-edad/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homeodyssey.app/imprimibles/tareas-por-edad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/printables/chores-by-age/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/printables/chores-by-age/"/>
+  </url>
+  <url>
+    <loc>https://homeodyssey.app/en/printables/chores-by-age/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homeodyssey.app/imprimibles/tareas-por-edad/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/printables/chores-by-age/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/printables/chores-by-age/"/>
+  </url>
+  <url>
+    <loc>https://homeodyssey.app/imprimibles/recompensas-sin-dinero/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homeodyssey.app/imprimibles/recompensas-sin-dinero/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/printables/rewards-without-money/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/printables/rewards-without-money/"/>
+  </url>
+  <url>
+    <loc>https://homeodyssey.app/en/printables/rewards-without-money/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homeodyssey.app/imprimibles/recompensas-sin-dinero/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/printables/rewards-without-money/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/printables/rewards-without-money/"/>
+  </url>
   <url><loc>https://homeodyssey.app/soporte.html</loc></url>
   <url><loc>https://homeodyssey.app/en/support.html</loc></url>
   <url><loc>https://homeodyssey.app/privacidad.html</loc></url>
