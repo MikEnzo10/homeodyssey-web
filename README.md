@@ -16,16 +16,20 @@ Web de HomeOdyssey: HTML y CSS estáticos, sin compilar nada.
 
 - Estilo común en `assets/estilo.css` (mismos colores y letra Nunito que la app).
 - `assets/web.js`: pestañas de edades, vídeo, enlaces a las tiendas y medición. **Todo lo que hay que
-  rellenar está en el bloque `AJUSTES` al principio**: `APP_STORE_ID` (ID de Apple de la app; mientras
-  esté vacío el botón de App Store lleva a una búsqueda), `UMAMI_ID` (analítica; sin ID no carga nada) y
-  `PT_APPLE` (atribución de campañas de Apple). Los botones de tienda en el HTML llevan `data-tienda`
-  (`play`, `appstore` o `auto`) y el JS pone el enlace final con los UTM.
+  rellenar está en el bloque `AJUSTES` al principio**: `APP_STORE_ID` (ID de Apple de la app),
+  `APP_STORE_PUBLICADA` (**el interruptor del día D**: mientras sea `false`, los botones de App Store
+  se ven apagados con «Muy pronto», sin enlace; en cuanto Apple publique la app, ponerlo a `true` y ya
+  enlazan a la ficha), `UMAMI_ID` (analítica; sin ID no carga nada), `PT_APPLE` (atribución de campañas
+  de Apple) y `FIN_LANZAMIENTO` (último día del lanzamiento gratis). Los botones de tienda en el HTML
+  llevan `data-tienda` (`play`, `appstore` o `auto`) y el JS pone el enlace final con los UTM.
 - Vídeo de presentación: la sección `#video` de las portadas está oculta hasta que `data-video` tenga
   la URL del mp4; se carga solo al pulsar el póster.
 - Las páginas legales son copia de `backend/src/main/resources/static/` del repositorio
   de la app, que siguen publicadas en Railway. Si cambia la política, cambiarla en los dos sitios.
 - Las capturas (`assets/img/es`, `assets/img/en`) salen de la familia de ejemplo de las imágenes
-  de tienda (`homeodyssey-marketing/aso/2026-10-29-imagenes-tienda`). Son WebP de 720 px de ancho.
+  de tienda de la 1.1 (`homeodyssey-marketing/aso/2026-11-11-imagenes-tienda-1.1/capturas-originales`,
+  reducidas a 720×1600 WebP) y las de la hoja, de la tanda del 29 oct. Los héroes y rangos
+  (`assets/img/heroes`) son ilustraciones de la app.
 - `assets/img/og-es.png` y `og-en.png`: la imagen que aparece al compartir el enlace.
 
 ## Verla en el ordenador

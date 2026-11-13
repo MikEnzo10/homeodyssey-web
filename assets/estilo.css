@@ -92,6 +92,9 @@ p { margin: 0; }
   transition: transform .15s ease;
 }
 .boton-tienda:hover { transform: translateY(-2px); }
+/* App Store todavía en revisión (AJUSTES.APP_STORE_PUBLICADA en web.js): el botón se queda apagado, sin enlace. */
+.boton-tienda.pronto { background: rgba(255,255,255,.08); color: #fff; box-shadow: none; border: 1px solid rgba(255,255,255,.3); cursor: default; }
+.boton-tienda.pronto:hover { transform: none; }
 .boton-tienda svg { width: 26px; height: 26px; flex: none; }
 .boton-tienda span { display: block; font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; opacity: .8; line-height: 1.1; }
 .boton-tienda strong { display: block; font-size: 19px; font-weight: 900; line-height: 1.15; letter-spacing: -0.01em; }
@@ -201,16 +204,24 @@ p { margin: 0; }
 .chips span { background: var(--tarjeta); border: 1px solid #F3DFA6; border-radius: 999px; padding: 7px 13px; font-weight: 800; font-size: 15px; }
 .nota-ejemplos { text-align: center; color: var(--suave); margin-top: 28px; font-size: 16px; }
 
-/* Lo que ve cada uno */
-.dos-miradas { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.mirada { border-radius: var(--radio); padding: 36px 36px 0; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
-.mirada-peque { background: linear-gradient(160deg, #2A4BB0, #0B1640); color: #fff; }
-.mirada-adulto { background: var(--tarjeta); border: 1px solid var(--linea); }
-.mirada h3 { font-size: 26px; font-weight: 900; }
-.mirada p { margin-top: 10px; font-size: 17px; }
-.mirada-peque p { color: var(--lila-claro); }
-.mirada-adulto p { color: var(--suave); }
-.mirada .movil { width: 270px; margin: 32px auto -120px; align-self: end; }
+/* Cierre de la semana: la ceremonia, al final de los cuatro pasos */
+.cierre-semana {
+  margin-top: 88px; border-radius: var(--radio); overflow: hidden; padding: 44px 48px 0;
+  background: linear-gradient(160deg, #2A4BB0, #0B1640); color: #fff;
+  display: grid; grid-template-columns: 1fr 260px; gap: 40px; align-items: end;
+}
+.cierre-texto { padding-bottom: 44px; }
+.cierre-semana .etiqueta { color: var(--oro); }
+.cierre-semana h3 { font-size: clamp(26px, 3vw, 34px); font-weight: 900; }
+.cierre-semana p { margin-top: 12px; color: var(--lila-claro); font-size: 17px; max-width: 34em; }
+.cierre-semana .movil { width: 260px; margin-bottom: -120px; justify-self: center; }
+
+/* Lo que hace que dure: cuatro claves sin maqueta */
+.claves { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.clave { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 22px; padding: 24px; }
+.clave .emoji { font-size: 36px; line-height: 1; display: block; margin-bottom: 12px; }
+.clave h3 { font-size: 19px; font-weight: 900; }
+.clave p { color: var(--suave); font-size: 15px; margin-top: 8px; }
 
 /* Confianza */
 .confianza { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -241,7 +252,7 @@ p { margin: 0; }
 .proximo-puntos li { font-size: 14px; font-weight: 800; color: var(--tinta); background: rgba(255,255,255,0.7);
   border: 1px solid var(--linea); border-radius: 999px; padding: 6px 14px; }
 .proximo-chip { display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
-  color: #B7791F; background: rgba(255,200,61,0.18); border-radius: 999px; padding: 4px 12px; margin-bottom: 8px; }
+  color: #7A5300; background: rgba(255,200,61,0.22); border-radius: 999px; padding: 4px 12px; margin-bottom: 8px; }
 .proximo-nota { text-align: center; color: var(--suave); font-size: 15px; margin-top: 22px; }
 .papel-como-titulo { text-align: center; font-size: 24px; font-weight: 900; margin-bottom: 28px; }
 .papel-pasos-app { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -351,7 +362,12 @@ p { margin: 0; }
   .portada-moviles { height: 470px; }
   .portada-moviles .movil:first-child { right: 50%; transform: translateX(62%); width: 240px; }
   .portada-moviles .movil:last-child { right: 50%; transform: translateX(-25%) rotate(-7deg); width: 200px; }
-  .paso, .panel-edad, .dos-miradas { grid-template-columns: 1fr; gap: 36px; }
+  .paso, .panel-edad { grid-template-columns: 1fr; gap: 36px; }
+  .cierre-semana { grid-template-columns: 1fr; padding: 36px 28px 0; text-align: center; margin-top: 64px; }
+  .cierre-texto { padding-bottom: 0; }
+  .cierre-semana p { margin-inline: auto; }
+  .cierre-semana .movil { width: 230px; margin-top: 8px; margin-bottom: -110px; }
+  .claves { grid-template-columns: 1fr 1fr; }
   .paso:nth-child(even) .paso-texto { order: 0; }
   .paso-texto { text-align: center; }
   .paso ul { justify-content: center; text-align: left; }
@@ -386,8 +402,9 @@ p { margin: 0; }
   .letra-pequena { text-wrap: balance; }
   /* Maquetas más pequeñas: así cada paso cabe casi en una pantalla y la página no se hace eterna. */
   .paso-imagen { width: min(250px, 100%); }
-  .mirada .movil { width: 230px; margin-bottom: -100px; }
   .pasos { gap: 64px; }
+  .claves { grid-template-columns: 1fr; gap: 12px; }
+  .clave { padding: 18px; }
   .boton-tienda strong { font-size: 17px; }
   .lista-misiones { grid-template-columns: 1fr; }
   .seccion { padding-block: 64px; }
@@ -403,7 +420,6 @@ p { margin: 0; }
   .proximo .emoji { font-size: 28px; }
   .proximo h3 { font-size: 16px; }
   .proximo p { font-size: 14px; }
-  .mirada { padding: 28px 24px 0; }
   .caja, .plan { padding: 24px; }
   .pie .derechos { margin-left: 0; }
   .portada-imp h1 { font-size: 32px; }
@@ -423,12 +439,16 @@ p { margin: 0; }
 /* ===== Novedades 1.1: Desafíos de la semana, héroes y Abuelos en la aventura ===== */
 .chip-nuevo { display: inline-block; background: var(--oro-degradado); color: #3A2200; font-weight: 900; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; margin-right: 8px; vertical-align: 2px; }
 .desafios .envoltura { position: relative; }
-.materias { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.materia { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 22px; padding: 26px; }
-.materia .emoji { font-size: 40px; line-height: 1; display: block; margin-bottom: 12px; }
-.materia h3 { font-size: 22px; font-weight: 900; }
-.materia p { color: var(--lila-claro); font-size: 16px; margin-top: 8px; }
-.desafio-puntos { list-style: none; padding: 0; margin: 28px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 920px; }
+.desafios-grid { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: center; }
+.desafios-texto h2 { font-size: clamp(32px, 4vw, 46px); font-weight: 900; }
+.desafios-entrada { margin-top: 16px; color: var(--lila-claro); font-size: 19px; max-width: 34em; }
+.materias { display: grid; gap: 12px; margin-top: 28px; }
+.materia { display: flex; gap: 16px; align-items: flex-start; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 18px; padding: 16px 18px; }
+.materia .emoji { flex: none; font-size: 30px; line-height: 1; margin-top: 2px; }
+.materia h3 { font-size: 19px; font-weight: 900; }
+.materia p { color: var(--lila-claro); font-size: 15px; margin-top: 4px; }
+.desafios .paso-imagen::before { background: radial-gradient(circle, rgba(255, 201, 77, .22), rgba(139, 92, 246, .14) 45%, transparent 70%); }
+.desafio-puntos { list-style: none; padding: 0; margin: 48px auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 920px; }
 .desafio-puntos li { font-size: 15px; font-weight: 800; color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: 8px 14px; }
 .heroes-bloque { margin-top: 80px; text-align: center; }
 .heroes-bloque h3 { font-size: clamp(26px, 3vw, 34px); font-weight: 900; }
@@ -449,19 +469,11 @@ p { margin: 0; }
 .abuelos-texto h2 { font-size: clamp(30px, 3.6vw, 42px); font-weight: 900; }
 .abuelos-entrada { margin-top: 16px; color: var(--suave); font-size: 19px; }
 .abuelos .incluido-plus { color: #8A5A00; border-color: #F3DFA6; background: #FFF6DE; }
-.abuelo-pantalla { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 34px; padding: 26px 22px; box-shadow: 0 30px 60px rgba(23, 26, 58, .14); max-width: 380px; justify-self: center; width: 100%; }
-.abuelo-hola { font-size: 22px; font-weight: 900; }
-.abuelo-peques { display: flex; gap: 8px; margin: 16px 0 18px; }
-.abuelo-peques span { font-weight: 800; font-size: 15px; padding: 8px 16px; border-radius: 999px; border: 2px solid var(--linea); }
-.abuelo-peques span:first-child { background: var(--noche-2); border-color: var(--noche-2); color: #fff; }
-.abuelo-toca { font-weight: 800; color: var(--suave); font-size: 15px; margin-bottom: 10px; }
-.abuelo-tarea { border: 1px solid var(--linea); border-radius: 18px; padding: 14px; margin-top: 10px; }
-.abuelo-tarea p { font-weight: 800; font-size: 18px; }
-.abuelo-boton { display: block; margin-top: 10px; text-align: center; font-weight: 900; font-size: 18px; color: #3A2200; background: var(--oro-degradado); border-radius: 14px; padding: 12px; }
-.abuelo-tarea.hecha { background: #EAF8EE; border-color: #BFE6CB; }
-.abuelo-tarea.hecha small { display: block; margin-top: 6px; color: #2E7D4A; font-weight: 800; font-size: 14px; }
+.abuelos-imagen::before { background: radial-gradient(circle, rgba(255, 201, 77, .3), rgba(255, 138, 61, .12) 45%, transparent 70%); }
 @media (max-width: 920px) {
-  .materias { grid-template-columns: 1fr; }
+  .desafios-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .desafios-entrada { margin-inline: auto; }
+  .materia { text-align: left; }
   .heroes { grid-template-columns: repeat(3, 1fr); }
   .abuelos-grid { grid-template-columns: 1fr; gap: 40px; }
 }

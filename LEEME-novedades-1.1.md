@@ -1,30 +1,35 @@
-# Novedades 1.1 en la web (rama `novedades-1.1`)
+# Web para el lanzamiento de la 1.1 (rama `web-lanzamiento-1.1`)
 
 **No se publica hasta que la 1.1 esté aprobada en las dos tiendas.** Entonces: merge a `main` y push.
-La fecha del lanzamiento gratis (7 de enero) ya está en `main` y no depende de esta rama.
+La fecha del lanzamiento gratis (7 de enero) sale de `AJUSTES.FIN_LANZAMIENTO` en `assets/web.js`.
 
-## Qué cambia (ES y EN)
+## El día D (App Store)
 
-- **Sección nueva «Desafíos de la semana»** (`#desafios` / `#challenges`), sobre fondo noche:
-  - Mates, Lógica y Memoria;
-  - puntos clave: unos 6 min de pantalla a la semana, nivel que se adapta, estrellas extra, se activan por peque, juegan solo los peques;
-  - bloque «Cada peque elige su héroe» con los 6 personajes (Luna, Kai, Nova, Max, Iris, Teo) y los 6 rangos de Iris, de Aprendiz a Gran Maga.
-  - Lleva la nota «Personajes ilustrados de la app, creados con ayuda de IA. No son niños reales» y «Incluido en HomeOdyssey Plus».
-- **Sección nueva «Abuelos en la aventura»** (`#abuelos` / `#grandparents`):
-  - 3 pasos: invitar por WhatsApp, marcan y tú confirmas, «Pasar el mando» unos días;
-  - una maqueta en HTML de la pantalla de los abuelos (sin capturas, sirve en los dos idiomas);
-  - «Incluido en Plus · hasta 4 colaboradores».
-- **Menú:** entran «Desafíos» y «Abuelos». Sale «Ejemplos» para que quepa sin partirse; la sección sigue en la página.
-- **Precios › Plus:**
-  - «Invita a tu pareja o a los abuelos (hasta 6 adultos)» pasa a ser «Invita a tu pareja y a otros adultos (hasta 6)»;
-  - dos líneas nuevas con la etiqueta «Nuevo»: desafíos y héroe, y abuelos (hasta 4).
-- **Preguntas:**
-  - la de la pareja y los abuelos explica el modo abuelos;
-  - pregunta nueva: «¿Los desafíos no son más pantalla?».
-- **Lo que estamos preparando:** el destacado ya no promete minijuegos en general. Dice que los desafíos ya están y que lo siguiente es «¡Te reto!».
-- **Imágenes:** `assets/img/heroes/`, 12 webp optimizadas (320 px los héroes y 200 px los rangos, de 32 a 80 KB). Salen de `niddum/app/assets/personajes/`.
-- **Estilos:** al final de `assets/estilo.css`, en el bloque «Novedades 1.1».
+En `assets/web.js`, `AJUSTES.APP_STORE_PUBLICADA: false` → `true`. Nada más: el ID (6828787492) ya está
+puesto. Mientras sea `false`, los botones de App Store se ven apagados («Muy pronto · App Store», sin
+enlace) y el botón «Descargar» de la cabecera, en un iPhone, baja al final de la página. Los textos de
+la web no dicen «ya disponible en App Store» en ningún sitio: solo «en Android y iPhone».
+
+## Qué hay en esta rama (ES y EN)
+
+- **Hilo de la portada:** tareas de casa → estrellas → recompensa / hucha. «Cómo funciona» tiene 4 pasos
+  (prepara, cumplen, confirmas y llegan las estrellas, las cambian por su recompensa) y una tarjeta de
+  cierre con la ceremonia del domingo. La portada enseña el inicio del peque y su hucha.
+- **«Pensada para que dure más de dos semanas»:** balanza, podio justo, niveles y rachas, propuestas de
+  los peques (sustituye a «Lo que más les engancha», que ya está en el paso 4).
+- **Desafíos de la semana** (`#desafios` / `#challenges`): enfocados como «estrellas extra si les sobra un
+  rato», no como deberes. Captura real de «Mis desafíos», las tres materias, los puntos clave y el bloque
+  de héroes con los 6 personajes y los 6 rangos. Lleva la nota de personajes ilustrados con IA.
+- **Abuelos en la aventura** (`#abuelos` / `#grandparents`): captura real de la pantalla de la abuela.
+  El texto cuenta cómo entran de verdad (instalan la app, «Cuido de los peques», código y nombre).
+- **Precios y preguntas** al día con la 1.1; FAQ nueva sobre recompensas sin dinero (enlaza al
+  imprimible en ES). Enlaces a los dos imprimibles desde Ejemplos, En papel y el pie (ES).
+- **SEO:** descripciones con las funciones nuevas, OG sin «ya en App Store», datos estructurados
+  `MobileApplication` + `FAQPage`, sitemap con hreflang completo.
+- **Imágenes:** `assets/img/es|en/` con las capturas de la 1.1 (`p04-inicio`, `p03-misiones`,
+  `a01-inicio`, `p06-recompensas`, `c02-ceremonia`, `d01-desafios`, `ab2-abuelos`) a 720×1600 WebP.
 
 ## Pendiente (opcional)
 
-Cuando estén las capturas nuevas de las tiendas (ES/EN), se puede añadir un móvil con «Mis desafíos» o una partida a la sección de desafíos. Iría en `assets/img/es|en/`, como el resto.
+- Vídeo de presentación (`#video`): cuando esté el mp4, ruta en `data-video` y fotograma como póster.
+- `assets/img/og-es.png` / `og-en.png` siguen siendo las del 29 oct (inicio del peque de la 1.0).

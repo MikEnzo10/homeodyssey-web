@@ -2,8 +2,11 @@
 // Las páginas no llevan ningún otro ID ni enlace de tienda que haya que tocar.
 const AJUSTES = {
   // ID numérico de la app en App Store Connect › Información de la app › «ID de Apple».
-  // Mientras esté vacío, los botones de App Store llevan a una búsqueda (nunca a un enlace roto).
-  APP_STORE_ID: '', // [PENDIENTE: ID de App Store] p. ej. '6741234567'
+  APP_STORE_ID: '6828787492',
+  // DÍA D: poner a true cuando Apple publique la app. Mientras sea false, los botones de App Store
+  // se ven apagados («Muy pronto en App Store», sin enlace) y el botón «Descargar» de la cabecera
+  // en un iPhone baja al final de la página en vez de abrir una ficha que aún no existe.
+  APP_STORE_PUBLICADA: false,
   // Umami Cloud › Ajustes del sitio › «Website ID». Mientras esté vacío no se carga nada.
   UMAMI_ID: 'd0e0dde4-d112-436a-a368-f8a92d120c18',
   // «Provider token» del generador de enlaces de campaña de App Store Connect (Analíticas › Adquisición).
@@ -122,9 +125,21 @@ document.querySelectorAll('[data-video]').forEach((sec) => {
   const ct = [utm.utm_source, utm.utm_campaign, utm.utm_content].filter(Boolean).join('-').slice(0, 40);
 
   // data-tienda="play" | "appstore" | "auto" (la del móvil del visitante; Play si no es iOS).
+  const PRONTO = { es: 'Muy pronto', en: 'Coming soon' };
   document.querySelectorAll('a[data-tienda]').forEach((a) => {
     let tienda = a.dataset.tienda;
-    if (tienda === 'auto') tienda = esIOS ? 'appstore' : 'play';
+    if (tienda === 'auto') {
+      if (esIOS && !AJUSTES.APP_STORE_PUBLICADA) return; // se queda como ancla a #descargar
+      tienda = esIOS ? 'appstore' : 'play';
+    }
+    if (tienda === 'appstore' && !AJUSTES.APP_STORE_PUBLICADA) {
+      a.classList.add('pronto');
+      a.removeAttribute('href');
+      a.setAttribute('aria-disabled', 'true');
+      const etiqueta = a.querySelector('span');
+      if (etiqueta) etiqueta.textContent = PRONTO[idioma] || PRONTO.en;
+      return;
+    }
     const play = tienda === 'play';
     const url = new URL(play ? enlacePlay() : enlaceAppStore());
     if (play) url.searchParams.set('referrer', referrer);
