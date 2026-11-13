@@ -6,7 +6,7 @@ const AJUSTES = {
   // DÍA D: poner a true cuando Apple publique la app. Mientras sea false, los botones de App Store
   // se ven apagados («Muy pronto en App Store», sin enlace) y el botón «Descargar» de la cabecera
   // en un iPhone baja al final de la página en vez de abrir una ficha que aún no existe.
-  APP_STORE_PUBLICADA: false,
+  APP_STORE_PUBLICADA: true,
   // Umami Cloud › Ajustes del sitio › «Website ID». Mientras esté vacío no se carga nada.
   UMAMI_ID: 'd0e0dde4-d112-436a-a368-f8a92d120c18',
   // «Provider token» del generador de enlaces de campaña de App Store Connect (Analíticas › Adquisición).
