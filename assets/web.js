@@ -19,12 +19,12 @@ const AJUSTES = {
 
 const idioma = (document.documentElement.lang || 'es').slice(0, 2);
 
-// Enlaces a las tiendas. Play lleva el idioma; App Store, la tienda española en la web en
-// español y la del visitante (sin país) en inglés.
-const enlacePlay = () => `https://play.google.com/store/apps/details?id=${AJUSTES.PLAY_ID}&hl=${idioma}`;
+// Enlaces a las tiendas. Play lleva el idioma (pt-BR en la página en portugués); App Store, la
+// tienda española en la web en español, la de Brasil en portugués y la del visitante (sin país) en inglés.
+const enlacePlay = () => `https://play.google.com/store/apps/details?id=${AJUSTES.PLAY_ID}&hl=${idioma === 'pt' ? 'pt-BR' : idioma}`;
 const enlaceAppStore = () => {
   if (AJUSTES.APP_STORE_ID) {
-    const pais = idioma === 'es' ? 'es/' : '';
+    const pais = { es: 'es/', pt: 'br/' }[idioma] || '';
     return `https://apps.apple.com/${pais}app/homeodyssey/id${AJUSTES.APP_STORE_ID}`;
   }
   // Sin ID todavía: una búsqueda que siempre funciona y que enseñará la ficha en cuanto exista.
@@ -35,12 +35,14 @@ const enlaceAppStore = () => {
 (() => {
   const [a, m, d] = AJUSTES.FIN_LANZAMIENTO.split('-').map(Number);
   const fin = new Date(a, m - 1, d);
-  const formato = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long' });
+  // «7 de enero» · «7 de janeiro» · «January 7»
+  const LOCALE = { es: 'es-ES', pt: 'pt-BR' };
+  const formato = new Intl.DateTimeFormat(LOCALE[idioma] || 'es-ES', { day: 'numeric', month: 'long' });
   const enIngles = (f) => f.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
   document.querySelectorAll('[data-fecha]').forEach((el) => {
     const extra = Number((el.dataset.fecha.match(/\+(\d+)/) || [0, 0])[1]);
     const f = new Date(fin); f.setDate(f.getDate() + extra);
-    el.textContent = idioma === 'es' ? formato.format(f) : enIngles(f);
+    el.textContent = LOCALE[idioma] ? formato.format(f) : enIngles(f);
   });
   if (new Date() >= fin) document.querySelectorAll('[data-lanzamiento]').forEach((el) => { el.style.display = 'none'; });
 })();
@@ -125,7 +127,7 @@ document.querySelectorAll('[data-video]').forEach((sec) => {
   const ct = [utm.utm_source, utm.utm_campaign, utm.utm_content].filter(Boolean).join('-').slice(0, 40);
 
   // data-tienda="play" | "appstore" | "auto" (la del móvil del visitante; Play si no es iOS).
-  const PRONTO = { es: 'Muy pronto', en: 'Coming soon' };
+  const PRONTO = { es: 'Muy pronto', en: 'Coming soon', pt: 'Em breve' };
   document.querySelectorAll('a[data-tienda]').forEach((a) => {
     let tienda = a.dataset.tienda;
     if (tienda === 'auto') {
