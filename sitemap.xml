@@ -5,6 +5,9 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://homeodyssey.app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://homeodyssey.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homeodyssey.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homeodyssey.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://homeodyssey.app/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/"/>
   </url>
   <url>
@@ -12,6 +15,9 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://homeodyssey.app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://homeodyssey.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homeodyssey.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homeodyssey.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://homeodyssey.app/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/"/>
   </url>
   <url>
@@ -19,6 +25,39 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://homeodyssey.app/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/"/>
     <xhtml:link rel="alternate" hreflang="pt" href="https://homeodyssey.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homeodyssey.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homeodyssey.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://homeodyssey.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/"/>
+  </url>
+  <url>
+    <loc>https://homeodyssey.app/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homeodyssey.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homeodyssey.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homeodyssey.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homeodyssey.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://homeodyssey.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/"/>
+  </url>
+  <url>
+    <loc>https://homeodyssey.app/de/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homeodyssey.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homeodyssey.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homeodyssey.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homeodyssey.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://homeodyssey.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/"/>
+  </url>
+  <url>
+    <loc>https://homeodyssey.app/it/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homeodyssey.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeodyssey.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://homeodyssey.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://homeodyssey.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://homeodyssey.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://homeodyssey.app/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://homeodyssey.app/en/"/>
   </url>
   <url>
