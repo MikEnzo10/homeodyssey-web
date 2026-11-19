@@ -10,7 +10,7 @@ const AJUSTES = {
   // Umami Cloud › Ajustes del sitio › «Website ID». Mientras esté vacío no se carga nada.
   UMAMI_ID: 'd0e0dde4-d112-436a-a368-f8a92d120c18',
   // «Provider token» del generador de enlaces de campaña de App Store Connect (Analíticas › Adquisición).
-  PT_APPLE: '', // [PENDIENTE: pt de Apple] p. ej. '123456789'
+  PT_APPLE: '129708925',
   PLAY_ID: 'com.niddum.app',
   // Primer día de pago: el mismo valor que PLUS_FIN_LANZAMIENTO en Railway (AAAA-MM-DD).
   // Las fechas de la página salen de aquí; ese día desaparecen solos los avisos de «gratis hasta…».
